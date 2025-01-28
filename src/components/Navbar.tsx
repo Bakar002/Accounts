@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
-  const [role, setRole] = useState(null);
+  const [role, setRole] = useState<string | null>(null);
 
   useEffect(() => {
     // Retrieve role from localStorage
