@@ -9,16 +9,38 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^3.4.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "axios": "^1.7.9",
+    "bcrypt": "^5.1.1",
+    "framer-motion": "^11.18.1",
+    "handlebars": "^4.7.8",
+    "html-pdf": "^3.0.1",
+    "html2canvas": "^1.4.1",
+    "jsonwebtoken": "^9.0.2",
+    "jspdf": "^2.5.2",
+    "lodash.debounce": "^4.0.8",
+    "mongoose": "^8.9.4",
+    "next": "15.1.4",
+    "next-auth": "^4.24.11",
+    "pdf-lib": "^1.17.1",
+    "pdfkit": "^0.16.0",
+    "phantomjs-prebuilt": "^2.1.16",
+    "puppeteer": "^24.1.0",
+    "puppeteer-core": "^24.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.4"
+    "react-select": "^5.9.0",
+    "react-spinners": "^0.15.0",
+    "react-toastify": "^11.0.3"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }

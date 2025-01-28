@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #000;
+        }
+        .bill-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #000;
+        }
+        .header-section {
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .header-section h1 {
+            font-size: 24px;
+            margin: 0;
+            font-weight: bold;
+        }
+        .header-section .contact-info {
+            font-size: 14px;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+        .header-section .logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+                /* Shared container style for details */
+        /*.details-section {*/
+        /*    display: flex;*/
+        /*    justify-content: space-between;*/
+        /*    margin-bottom: 20px;*/
+        /*}*/
+        /*.details-column {*/
+        /*    width: 48%;*/
+        /*}*/
+        /*.details-column div {*/
+        /*    display: flex;*/
+        /*    justify-content: space-between;*/
+        /*    margin-bottom: 8px;*/
+        /*}*/
+        /*.details-column span {*/
+        /*    font-size: 14px;*/
+        /*    font-weight: bold;*/
+        /*}*/
+        /*.details-column .value {*/
+        /*    font-weight: normal;*/
+        /*    text-align: right;*/
+        /*    margin-left: 10px;*/
+        /*}*/
+            .details-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .details-column {
+            width: 48%;
+        }
+        .details-column div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .details-column span {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .details-column .value {
+            font-weight: normal;
+            text-align: right;
+            margin-left: 10px;
+            width: 70%; /* Ensures alignment */
+            border-bottom: 1px solid #000; /* Underline for values */
+            padding-bottom: 5px;
+        }
+        .item-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .item-table th {
+            background-color: #f0f0f0; /* Light gray background for headers */
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+        .item-table td {
+            font-size: 14px;
+            padding: 8px 10px;
+            border: 1px solid #000; /* Borders for rows and columns */
+        }
+        .item-table td.left {
+            text-align: left; /* Align text to the left for descriptions */
+        }
+        .item-table td.right {
+            text-align: right; /* Align numeric values to the right */
+        }
+        .total-section {
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .total-section .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .total-section .row span {
+            font-weight: bold;
+        }
+        .grand-total-row {
+            font-size: 16px;
+            font-weight: bold;
+            text-align: right;
+            margin-top: 20px;
+            border-top: 2px solid #000;
+            padding-top: 10px;
+        }
+        .footer-notes {
+            font-size: 12px;
+            line-height: 1.5;
+            margin-top: 20px;
+            text-align: center;
+        }
+    <table class="item-table">
+        <!-- Table Header -->
+        <thead>
+            <tr>
+                <th>ITEM DESCRIPTION</th>
+                <th>QUANTITY</th>
+                <th>BOXES</th>
+                <th>PCS</th>
+                <th>Rate</th>
+                <th>AMOUNT</th>
+            </tr>
+        </thead>
+        <!-- Table Body -->
+        <tbody>
+            <tr>
+                <td class="left">OR4415 CM 40*40</td>
+                <td class="right">54.400 Meter</td>
+                <td class="right">34.00</td>
+                <td class="right">340.00</td>
+                <td class="right">1280.00</td>
+                <td class="right">69,632.00</td>
+            </tr>
+            <tr>
+                <td class="left">OR4420 CM 40*40</td>
+                <td class="right">56.000 Meter</td>
+                <td class="right">35.00</td>
+                <td class="right">350.00</td>
+                <td class="right">1280.00</td>
+                <td class="right">71,680.00</td>
+            </tr>
+            <!-- Add as many rows as needed -->
+        </tbody>
+    </table>
+
+    <!-- Totals Section -->
+    <div class="total-section">
+        <div class="row">
+            <span>P Amount:</span>
+            <span>Rs. 586,054.00</span>
+        </div>
+        <div class="row">
+            <span>Freight:</span>
+            <span>Rs. 0.00</span>
+        </div>
+        <div class="row">
+            <span>Breakage:</span>
+            <span>Rs. 1,722.00</span>
+        </div>
+        <div class="grand-total-row">
+            Grand Total (Rs.): Rs. 587,776.00
+        </div>
+    </div>
+
+    <!-- Footer Notes -->
+    <div class="footer-notes">
+        <p>Deals: Raktiles, Spanish & China Tiles, Grohe Fitting, Imported & Local Sanitary Ware, Shower Cabins, Bath Tubs, Whirlpools, Hydro Massage Showers.</p>
+        <p>Address: SHERAZI TRADERS LAHORE</p>
+    </div>
+
+    </style>
+</head>
+<body>
+    <div class="bill-container">
+        <!-- Header Section -->
+        <div class="header-section">
+            <h1>SHERAZI Bills</h1>
+            <div class="contact-info">
+                Kashmir Road, Sialkot. Tel: +92-52-4272731-32, 052-6944824<br>
+                Fax: +92-52-4292931 | E-mail: miansons1@yahoo.com
+            </div>
+            <div class="logo">
+                <!-- Placeholder for the logo -->
+                <img src="https://i.imgur.com/8KNByL6.jpeg" alt="Company Logo" style="width: 80px;">
+            </div>
+        </div>
+            <div class="details-section">
+        <!-- Customer Details -->
+        <div class="details-column">
+            <div>
+                <span>Name:</span>
+                <span class="value">SHERAZI TRADERS LAHORE</span>
+            </div>
+            <div>
+                <span>Address:</span>
+                <span class="value">Lahore</span>
+            </div>
+            <div>
+                <span>City:</span>
+                <span class="value">Lahore</span>
+            </div>
+            <div>
+                <span>Phone:</span>
+                <span class="value">03218450966</span>
+            </div>
+            <div>
+                <span>Term:</span>
+                <span class="value">-</span>
+            </div>
+        </div>
+
+        <!-- Bill Details -->
+        <div class="details-column">
+            <div>
+                <span>Bill No:</span>
+                <span class="value">27,042</span>
+            </div>
+            <div>
+                <span>Date:</span>
+                <span class="value">06-01-2025</span>
+            </div>
+            <div>
+                <span>Time:</span>
+                <span class="value">10:57:56am</span>
+            </div>
+            <div>
+                <span>Salesman:</span>
+                <span class="value">ABASS SAHIB</span>
+            </div>
+            <div>
+                <span>Ledger No:</span>
+                <span class="value">-</span>
+            </div>
+            <div>
+                <span>Ledger Bill No:</span>
+                <span class="value">-</span>
+            </div>
+        </div>
+    </div>
+    <table class="item-table">
+        <!-- Table Header -->
+        <thead>
+            <tr>
+                <th>ITEM DESCRIPTION</th>
+                <th>QUANTITY</th>
+                <th>BOXES</th>
+                <th>PCS</th>
+                <th>Rate</th>
+                <th>AMOUNT</th>
+            </tr>
+        </thead>
+        <!-- Table Body -->
+        <tbody>
+            <tr>
+                <td class="left">OR4415 CM 40*40</td>
+                <td class="right">54.400 Meter</td>
+                <td class="right">34.00</td>
+                <td class="right">340.00</td>
+                <td class="right">1280.00</td>
+                <td class="right">69,632.00</td>
+            </tr>
+            <tr>
+                <td class="left">OR4420 CM 40*40</td>
+                <td class="right">56.000 Meter</td>
+                <td class="right">35.00</td>
+                <td class="right">350.00</td>
+                <td class="right">1280.00</td>
+                <td class="right">71,680.00</td>
+            </tr>
+                  <tr>
+                <td class="left">OR4420 CM 40*40</td>
+                <td class="right">56.000 Meter</td>
+                <td class="right">35.00</td>
+                <td class="right">350.00</td>
+                <td class="right">1280.00</td>
+                <td class="right">71,680.00</td>
+            </tr>
+                  <tr>
+                <td class="left">OR4420 CM 40*40</td>
+                <td class="right">56.000 Meter</td>
+                <td class="right">35.00</td>
+                <td class="right">350.00</td>
+                <td class="right">1280.00</td>
+                <td class="right">71,680.00</td>
+            </tr>
+            <!-- Add as many rows as needed -->
+        </tbody>
+    </table>
+
+    <!-- Totals Section -->
+    <div class="total-section">
+        <div class="row">
+            <span>P Amount:</span>
+            <span>Rs. 586,054.00</span>
+        </div>
+        <div class="row">
+            <span>Freight:</span>
+            <span>Rs. 0.00</span>
+        </div>
+        <div class="row">
+            <span>Breakage:</span>
+            <span>Rs. 1,722.00</span>
+        </div>
+        <div class="grand-total-row">
+            Grand Total (Rs.): Rs. 587,776.00
+        </div>
+    </div>
+
+    <!-- Footer Notes -->
+    <div class="footer-notes">
+      باتھ ڈیلز پر دنیا کی بہترین کمپنیوں کی ٹائلز، اسپینیش اور چائنا ٹائلز، گراہی فٹنگ، امپورٹڈ اور لوکل سینیٹری، واشر شاور کیبن، باتھ ٹبز، وہیرپولز، ہائیڈرو میساج شاورز دستیاب ہیں۔ یہ ایک سیل نہیں ہے، بلکہ ہر پراڈکٹ کی قیمت مارکیٹ سے بہتر ہے۔ جو مارکیٹ کے ریٹ سے 30% سے کم ہو سکتی ہے اور 17% کے ریٹ پر ہوگی۔ تمام پراڈکٹس اعلیٰ معیار کی گارنٹی کے ساتھ ہیں اور ہر پراڈکٹ کے لئے اعلیٰ ترین کوالٹی کی یقین دہانی کرائی جاتی ہے۔ ہمارے یہاں 30 سے زائد برانڈز دستیاب ہیں۔ تجربہ کار کاریگر بھی موجود ہیں جو بہترین خدمات فراہم کرتے ہیں۔ مزید معلومات کے لیے، ہم سے رابطہ کریں۔
+
+
+        <p>Deals: Raktiles, Spanish & China Tiles, Grohe Fitting, Imported & Local Sanitary Ware, Shower Cabins, Bath Tubs, Whirlpools, Hydro Massage Showers.</p>
+        <p>Address: SHERAZI TRADERS LAHORE</p>
+    </div>
+
+    </div>
+</body>
+</html>
