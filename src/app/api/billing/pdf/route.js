@@ -2,6 +2,7 @@ import connectToDatabase from "@/lib/db";
 import Bill from "@/lib/models/Bill";
 import Customer from "@/lib/models/Customer";
 import puppeteer from "puppeteer";
+const os = require('os');
 
 export async function POST(request) {
     try {
@@ -249,13 +250,38 @@ function generateBillHTML(bill) {
 }
 
 // Generate PDF using Puppeteer
+
 async function generatePDF(html) {
-    const browser = await puppeteer.launch({
-        executablePath: '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome' 
-    }); 
-    const page = await browser.newPage();
-    await page.setContent(html);
-    const pdfBuffer = await page.pdf({ format: "A4", printBackground: true });
-    await browser.close();
-    return pdfBuffer;
+  let executablePath;
+
+  if (os.platform() === 'win32') {
+    // Default 64-bit Chrome path for Windows
+    executablePath = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
+  } else if (os.platform() === 'darwin') {
+    // macOS path
+    executablePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+  } else {
+    // Linux or other OS: Use Puppeteer's bundled Chromium
+    executablePath = puppeteer.executablePath();
+  }
+
+  // Launch the browser
+  const browser = await puppeteer.launch({
+    headless: 'new', // Use the new Headless mode for better performance
+    executablePath: executablePath,
+    args: ['--no-sandbox', '--disable-setuid-sandbox'] // Recommended for server environments
+  });
+
+  const page = await browser.newPage();
+  await page.setContent(html);
+
+  // Generate PDF
+  const pdfBuffer = await page.pdf({
+    format: "A4",
+    printBackground: true,
+    margin: { top: '20px', right: '20px', bottom: '20px', left: '20px' } // Optional margins
+  });
+
+  await browser.close();
+  return pdfBuffer;
 }
