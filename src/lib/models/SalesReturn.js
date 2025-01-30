@@ -1,15 +1,20 @@
 import mongoose from "mongoose";
 
 const salesReturnSchema = new mongoose.Schema({
-    billId: { type: mongoose.Schema.Types.ObjectId, ref: "Bill", required: true },
-    items: [
+    bill: { type: mongoose.Schema.Types.ObjectId, ref: "Bill", required: true },
+    customer: { type: mongoose.Schema.Types.ObjectId, ref: "Customer", required: true },
+    returnedTiles: [
         {
             tileId: { type: mongoose.Schema.Types.ObjectId, ref: "Tile", required: true },
-            quantity: { type: Number, required: true },
-            reason: { type: String, required: true },
+            quantityInPieces: { type: Number, required: true },
+            quantityInBoxes: { type: Number, required: true },
+            quantityInMeters: { type: Number, required: true },
+            rate: { type: Number, required: true },
+            price: { type: Number, required: true },
         },
     ],
-    totalRefund: { type: Number, required: true }, // Total refund amount
+    totalQuantity: { type: Number, required: true },
+    grandTotal: { type: Number, required: true },
     createdAt: { type: Date, default: Date.now },
 });
 

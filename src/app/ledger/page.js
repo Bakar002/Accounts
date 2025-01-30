@@ -49,11 +49,19 @@ const CustomerLedgerList = () => {
                                 <td className="border border-gray-300 px-4 py-2">{customer.phone}</td>
                                 <td className="border border-gray-300 px-4 py-2">Rs. {customer.balance.toFixed(2)}</td>
                                 <td className="border border-gray-300 px-4 py-2">
+                                    {/* Link to view ledger */}
                                     <Link
                                         href={`/ledger/${customer._id}`}
                                         className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
                                     >
                                         View Ledger
+                                    </Link>
+                                    {/* Button to create a new ledger entry */}
+                                    <Link
+                                        href={`/ledger/create/${customer._id}`}
+                                        className="ml-2 bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600"
+                                    >
+                                        Create Ledger Entry
                                     </Link>
                                 </td>
                             </tr>

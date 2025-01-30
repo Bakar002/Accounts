@@ -4,7 +4,9 @@ import Bill from "@/lib/models/Bill";
 export async function GET(request, { params }) {
     try {
         await connectToDatabase();
-        const { id } = params;
+
+        // Wait for params to be available
+        const { id } = await params;  // Add await here
 
         const bill = await Bill.findById(id)
             .populate("customer")

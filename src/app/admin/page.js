@@ -1,18 +1,14 @@
 "use client";
-
 import Link from "next/link";
-
 export default function AdminPage() {
   const links = [
     { path: "/inventory", label: "Inventory" },
-    { path: "/billing", label: "Bills" },
+    { path: "/billing", label: "Bills & Sales Return" },
     { path: "/ledger", label: "Ledger" },
     { path: "/inventory/add", label: "Inventory +" },
     { path: "/billing/create", label: "Bill Create" },
     { path: "/billing/create", label: "Ledger Create" },
-
   ];
-
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <h1 className="text-2xl font-bold text-gray-800 mb-6">Admin Dashboard</h1>

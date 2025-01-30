@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ClipLoader } from "react-spinners";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const ViewBills = () => {
     const [bills, setBills] = useState([]);
@@ -30,6 +31,11 @@ const ViewBills = () => {
         fetchBills();
     }, []);
 
+    const router = useRouter();
+
+const handleSalesReturn = (billId) => {
+    router.push(`/billing/return/${billId}`);
+};
     // Generate PDF for a specific bill
     const handlePrintBill = async (billId) => {
         setDownloading(billId);
@@ -106,21 +112,31 @@ const ViewBills = () => {
                                         </td>
                                         <td className="border border-gray-300 px-4 py-2">{bill.grandTotal.toFixed(2)}</td>
                                         <td className="border border-gray-300 px-4 py-2">
-                                            <button
-                                                className={`${
-                                                    downloading === bill._id
-                                                        ? "bg-gray-400"
-                                                        : "bg-blue-500 hover:bg-blue-600"
-                                                } text-white px-3 py-1 rounded flex items-center justify-center`}
-                                                disabled={downloading === bill._id}
-                                                onClick={() => handlePrintBill(bill._id)}
-                                            >
-                                                {downloading === bill._id ? (
-                                                    <ClipLoader color="#FFF" size={20} />
-                                                ) : (
-                                                    "Download Invoice"
-                                                )}
-                                            </button>
+                                            
+
+
+                                            
+                                        <button
+    className={`${
+        downloading === bill._id
+            ? "bg-gray-400"
+            : "bg-blue-500 hover:bg-blue-600"
+    } text-white px-3 py-1 rounded flex items-center justify-center mr-2`}
+    disabled={downloading === bill._id}
+    onClick={() => handlePrintBill(bill._id)}
+>
+    {downloading === bill._id ? (
+        <ClipLoader color="#FFF" size={20} />
+    ) : (
+        "Download Invoice"
+    )}
+</button>
+<button
+    className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded flex items-center justify-center"
+    onClick={() => handleSalesReturn(bill._id)}
+>
+    Sales Return
+</button>
                                         </td>
                                     </tr>
                                 ))}

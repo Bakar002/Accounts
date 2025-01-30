@@ -1,5 +1,8 @@
 import connectToDatabase from "@/lib/db";
 import Bill from "@/lib/models/Bill";
+import  Customer  from '@/lib/models/Customer';
+import Tile from '@/lib/models/Tile';
+
 
 export async function GET() {
     try {
