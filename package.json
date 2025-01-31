@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^3.4.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@sparticuz/chromium": "^132.0.0",
     "axios": "^1.7.9",
     "bcrypt": "^5.1.1",
     "framer-motion": "^11.18.1",
